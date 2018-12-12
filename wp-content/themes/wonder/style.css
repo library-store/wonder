@@ -983,3 +983,20 @@ object {
 .gallery-caption {
 	display: block;
 }
+
+
+/**---- HEADER ----**/
+#masthead {
+	display: flex;
+}
+
+.site-branding, #site-navigation {
+	display: flex;
+}
+
+.mega-menu-wrap {
+	width: 100% !important;
+	display: flex !important;
+	align-items: center;
+}
+/**---- END HEADER ----**/
