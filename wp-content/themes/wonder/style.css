@@ -988,6 +988,15 @@ object {
 /**---- HEADER ----**/
 #masthead {
 	display: flex;
+	height: 100px;
+	width: 100%;
+	z-index: 30;
+	position: relative;
+	background-size: cover;
+	background-position: 50% 0;
+	transition: background-color .3s, opacity .3s;
+	background-color: rgba(10,10,10,0.52)!important;
+	padding: 0px 15px;
 }
 
 .site-branding, #site-navigation {
@@ -998,5 +1007,10 @@ object {
 	width: 100% !important;
 	display: flex !important;
 	align-items: center;
+	background: transparent !important;
+}
+
+.nav-menu {
+	width: 100% !important;
 }
 /**---- END HEADER ----**/

@@ -17,6 +17,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/js/plugins/flickity/flickity.css">
+	<script type="text/javascript" src="<?php echo get_template_directory_uri() ?>/js/plugins/flickity/flickity.pkgd.min.js"></script>
 	<?php wp_head(); ?>
 </head>
 
