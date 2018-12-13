@@ -23,12 +23,10 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'wonder' ); ?></a>
-
+<div id="page" class="site" <?php body_class(); ?>>
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
-            <a href="<?php echo home_url(); ?>" class="logo-wrapper " title="">
+            <a href="<?php echo home_url(); ?>" class="logo-wrapper" title="" style="font-size: 0px !important;">
                 <?php if (get_field('logo', 'option')) : ?>
                     <img src="<?php echo get_field('logo', 'option'); ?>" alt="">
                 <?php endif; ?>
@@ -44,7 +42,6 @@
 			) );
 			?>
 		</nav><!-- #site-navigation -->
-
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

@@ -471,6 +471,7 @@ html {
 body {
 	background: #fff;
 	/* Fallback for when there is no custom background color defined. */
+	font-family: "Helvetica,Arial,sans-serif", sans-serif;
 }
 
 hr {
@@ -991,7 +992,6 @@ object {
 	height: 100px;
 	width: 100%;
 	z-index: 30;
-	position: relative;
 	background-size: cover;
 	background-position: 50% 0;
 	transition: background-color .3s, opacity .3s;
@@ -1013,4 +1013,43 @@ object {
 .nav-menu {
 	width: 100% !important;
 }
+
+body.home header {
+	position: fixed;
+	top: 0px;
+}
+
+.logo-wrapper img {
+	height: 100%;
+	padding: 2px 25px 2px 0px;
+	max-width: unset;
+}
+
+.mega-sub-menu {
+	background: rgba(0,0,0,.7) !important;
+}
+
+.icon-user:before {
+	content: "\e901";
+}
+
 /**---- END HEADER ----**/
+
+.carousel-cell {
+	width: 100%; /* full width */
+	background: #222;
+	/* center images in cells with flexbox */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.carousel.is-fullscreen .carousel-cell {
+	height: 100%;
+}
+
+.carousel-cell img {
+	display: block;
+	max-height: 100%;
+	width: 100%;
+}
