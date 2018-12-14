@@ -1029,10 +1029,6 @@ body.home header {
 	background: rgba(0,0,0,.7) !important;
 }
 
-.icon-user:before {
-	content: "\e901";
-}
-
 /**---- END HEADER ----**/
 
 .carousel-cell {

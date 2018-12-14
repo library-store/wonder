@@ -18,7 +18,7 @@ get_header();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
             <?php if ( is_home() ) : ?>
-                <div id="main-slideshow" class="carousel js-flickity">
+                <div id="main-slideshow" class="main-carousel carousel js-flickity">
 
                     <?php if (get_field('slideshow', 'option')) { ?>
                         <?php foreach (get_field('slideshow', 'option') as $opt) { ?>
