@@ -10,38 +10,61 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see 	    https://docs.woocommerce.com/document/template-structure/
- * @author 		WooThemes
- * @package 	WooCommerce/Templates
+ * @see       https://docs.woocommerce.com/document/template-structure/
+ * @author    WooThemes
+ * @package   WooCommerce/Templates
  * @version     3.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+  exit;
 }
+
+// Fallback to old
+if(!fl_woocommerce_version_check('3.0.0')){
+  return wc_get_template_part( 'single-product/related-old');
+}
+
+// Get Type
+$type = get_theme_mod('related_products', 'slider');
+if($type == 'hidden') return;
+if($type == 'grid') $type = 'row';
+
+// Disable slider if less than selected products pr row.
+if ( sizeof( $related_products ) < (get_theme_mod('related_products_pr_row', 4)+1) ) {
+  $type = 'row';
+}
+
+$repater['type'] = $type;
+$repater['columns'] = get_theme_mod('related_products_pr_row', 4);
+$repater['slider_style'] = 'reveal';
+$repater['row_spacing'] = 'small';
+
 
 if ( $related_products ) : ?>
 
-	<section class="related products">
+  <div class="related related-products-wrapper product-section">
 
-		<h2><?php esc_html_e( 'Related products', 'woocommerce' ); ?></h2>
+    <h3 class="product-section-title container product-section-title-related pt-half pb-half uppercase">
+      <?php esc_html_e( 'Related products', 'woocommerce' ); ?>
+    </h3>
 
-		<?php woocommerce_product_loop_start(); ?>
+      <?php echo get_flatsome_repeater_start($repater); ?>
 
-			<?php foreach ( $related_products as $related_product ) : ?>
+      <?php foreach ( $related_products as $related_product ) : ?>
 
-				<?php
-				 	$post_object = get_post( $related_product->get_id() );
+        <?php
+          $post_object = get_post( $related_product->get_id() );
 
-					setup_postdata( $GLOBALS['post'] =& $post_object );
+          setup_postdata( $GLOBALS['post'] =& $post_object );
 
-					wc_get_template_part( 'content', 'product' ); ?>
+          wc_get_template_part( 'content', 'product' ); ?>
 
-			<?php endforeach; ?>
+      <?php endforeach; ?>
 
-		<?php woocommerce_product_loop_end(); ?>
+      <?php echo get_flatsome_repeater_end($repater); ?>
 
-	</section>
+  </div>
 
 <?php endif;
 

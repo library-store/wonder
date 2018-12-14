@@ -10,48 +10,70 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see     https://docs.woocommerce.com/document/template-structure/
+ * @see     http://docs.woothemes.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
  * @version 2.6.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+	exit; // Exit if accessed directly
 }
+
+$cat_style = flatsome_option('cat_style');
+$color = '';
+$text_pos = '';
+
+if($cat_style == 'overlay' || $cat_style == 'shade'){
+	$color = 'dark';
+}
+if($cat_style == 'overlay'){
+	$text_pos = 'box-text-middle text-shadow-5';
+}
+if($cat_style == 'badge'){
+	$text_pos .= ' hover-dark';
+}
+
+
+$classes = array('product-category','col');
+
 ?>
-<li <?php wc_product_cat_class( '', $category ); ?>>
-	<?php
-	/**
-	 * woocommerce_before_subcategory hook.
-	 *
-	 * @hooked woocommerce_template_loop_category_link_open - 10
-	 */
-	do_action( 'woocommerce_before_subcategory', $category );
+<div <?php wc_product_cat_class( $classes, $category ); ?>>
+<div class="col-inner">
+	<?php do_action( 'woocommerce_before_subcategory', $category ); ?>
 
-	/**
-	 * woocommerce_before_subcategory_title hook.
-	 *
-	 * @hooked woocommerce_subcategory_thumbnail - 10
-	 */
-	do_action( 'woocommerce_before_subcategory_title', $category );
+		<div class="box box-<?php echo $cat_style; ?>  <?php echo $text_pos;?> <?php echo $color; ?>">
+		<div class="box-image">
+			<?php
+				/**
+				 * woocommerce_before_subcategory_title hook
+				 *
+				 * @hooked woocommerce_subcategory_thumbnail - 10
+				 */
+				do_action( 'woocommerce_before_subcategory_title', $category );
+			?>
+			<?php if($cat_style == 'overlay'){ ?><div class="overlay"></div><?php } ?>
+			<?php if($cat_style == 'shade'){ ?><div class="shade"></div><?php } ?>
+		</div><!-- box-image -->
+		<div class="box-text text-center">
+			<div class="box-text-inner">
+					<h5 class="uppercase header-title">
+	       					<?php echo $category->name; ?>
+					</h5>
+					<p class="is-xsmall uppercase count">
+						<?php if ( $category->count > 0 ) echo apply_filters( 'woocommerce_subcategory_count_html', ' ' . $category->count . ' '.__('Products','woocommerce').'', $category); ?>
+					</p>
+					<?php
+						/**
+						 * woocommerce_after_subcategory_title hook
+						 */
+						do_action( 'woocommerce_after_subcategory_title', $category );
+					?>
 
-	/**
-	 * woocommerce_shop_loop_subcategory_title hook.
-	 *
-	 * @hooked woocommerce_template_loop_category_title - 10
-	 */
-	do_action( 'woocommerce_shop_loop_subcategory_title', $category );
+			</div><!-- .box-text-inner -->
+		</div><!-- .box-text -->
+		</div>
 
-	/**
-	 * woocommerce_after_subcategory_title hook.
-	 */
-	do_action( 'woocommerce_after_subcategory_title', $category );
-
-	/**
-	 * woocommerce_after_subcategory hook.
-	 *
-	 * @hooked woocommerce_template_loop_category_link_close - 10
-	 */
-	do_action( 'woocommerce_after_subcategory', $category ); ?>
-</li>
+	<?php do_action( 'woocommerce_after_subcategory', $category ); ?>
+</div>
+</div>

@@ -2,15 +2,6 @@
 /**
  * Shop breadcrumb
  *
- * This template can be overridden by copying it to yourtheme/woocommerce/global/breadcrumb.php.
- *
- * HOWEVER, on occasion WooCommerce will need to update template files and you
- * (the theme developer) will need to copy the new files to your theme to
- * maintain compatibility. We try to do this as little as possible, but it does
- * happen. When this occurs the version of the template file will be bumped and
- * the readme will list any important changes.
- *
- * @see 	    https://docs.woocommerce.com/document/template-structure/
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
  * @version     2.3.0
@@ -21,7 +12,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! empty( $breadcrumb ) ) {
+if ( !empty($breadcrumb) ) {
+
+	do_action('flatsome_before_breadcrumb');
 
 	echo $wrap_before;
 
@@ -31,17 +24,30 @@ if ( ! empty( $breadcrumb ) ) {
 
 		if ( ! empty( $crumb[1] ) && sizeof( $breadcrumb ) !== $key + 1 ) {
 			echo '<a href="' . esc_url( $crumb[1] ) . '">' . esc_html( $crumb[0] ) . '</a>';
-		} else {
+		} else if(!is_product() && !flatsome_option('wc_category_page_title')) {
 			echo esc_html( $crumb[0] );
 		}
 
 		echo $after;
 
+		// Single product or Active title
+		if(is_product() || flatsome_option('wc_category_page_title')){
+				$key = $key+1;
+				if ( sizeof( $breadcrumb ) > $key+1) {
+					echo ' <span class="divider">'.$delimiter.'</span> ';
+				}
+		} else{
+			
+		// Category pages
 		if ( sizeof( $breadcrumb ) !== $key + 1 ) {
-			echo $delimiter;
+				echo ' <span class="divider">'.$delimiter.'</span> ';
+			}
 		}
+
 	}
 
 	echo $wrap_after;
+
+	do_action('flatsome_after_breadcrumb');
 
 }
