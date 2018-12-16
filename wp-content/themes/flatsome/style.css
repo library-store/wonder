@@ -15,24 +15,108 @@ License URI: http://themeforest.net/licenses
 All custom CSS should be added to Flatsome > Advanced > Custom CSS,
 or in the style.css of a Child Theme.
 ***************/
+body {
+    font-family: "Helvetica,Arial,sans-serif", sans-serif !important;
+}
 
+.header-inner .header-nav-main .nav-top-link {
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-weight: 400;
+    font-size: 17.5px;
+}
+
+.nav-size-xlarge>li>a {
+    font-size: 1.6em !important;
+}
+
+.nav-divided>li+li>a:after {
+    left: -10px !important;
+}
+
+.pricing-table .title {
+    text-transform: none;
+    color: #0c0c0c;
+    font-size: 22.1px;
+}
+
+.pricing-table .price {
+    font-weight: 700 !important;
+    color: #3b5998;
+    font-size: 47px;
+    line-height: 30.4px;
+    font-family: Arial;
+}
+
+.featured-table .pricing-table-header .uppercase {
+    color: #ffffff;
+}
+
+.featured-table .pricing-table-header .is-xxlarge {
+    font-size: 47px !important;
+    line-height: 30.4px !important;
+    color: #ffffff;
+}
+
+.featured-table {
+    margin-top: 0 !important;
+    border-left-width: 1px !important;
+    border-right-width: 1px !important;
+    border-top-width: 1px !important;
+    border-bottom-width: 1px !important;
+}
+
+.section_home_prices {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: rgb(240, 240, 240);
+}
+
+.footer-1 {
+    background-color: #333333;
+    color: #e8e8e8;
+}
+
+h3.widget-title, span.widget-title {
+    text-transform: none;
+}
 /**---- END HEADER ----**/
 
-.carousel-cell {
-    width: 100%; /* full width */
-    background: #222;
-    /* center images in cells with flexbox */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.home #main {
+    margin-top: -100px;
 }
 
-.carousel.is-fullscreen .carousel-cell {
-    height: 100%;
+.header-bg-color, .header-wrapper {
+    background-color: rgba(10,10,10,0.52)!important;
 }
 
-.carousel-cell img {
-    display: block;
-    max-height: 100%;
-    width: 100%;
+.nav .nav-dropdown {
+    background-color: rgba(10,10,10,0.85);
+    border-color: rgba(107,107,107,0);
+}
+
+#header .header-nav-main ul.nav-dropdown>li.nav-dropdown-col>a {
+    color: #ed1d24 !important;
+}
+
+.nav-dropdown .menu-item-has-children>a, .nav-dropdown .title>a, .nav-dropdown .nav-dropdown-col>a {
+    color: #fff !important;
+    text-decoration: underline;
+}
+
+.wpcf7-checkbox .wpcf7-list-item {
+    width: 100% !important;
+}
+
+/*********************** WOOCOMMERCE *********************/
+.quick-view.quick-view-added {
+    display: none;
+}
+
+.page-id-277 .portfolio-element-wrapper .row.row-small{
+    max-width: none;
+    width: 100% !important;
+}
+
+.page-id-277 .featured-title{
+    display: none;
 }

@@ -7,7 +7,7 @@
 		$filter_nav = get_theme_mod( 'portfolio_archive_filter_style', 'line-grow' );
 
 		if($filter == 'disabled' || is_tax()){
-			$filter = 'disabled';z
+			$filter = 'disabled';
 		}
 
 		// Check if category

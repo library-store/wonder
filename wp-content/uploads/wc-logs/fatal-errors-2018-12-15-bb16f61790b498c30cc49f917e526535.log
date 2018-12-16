@@ -1,0 +1,16 @@
+2018-12-15T03:31:14+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in C:\xampp\htdocs\wonder\wp-includes\wp-db.php on line 1924
+
+2018-12-15T11:14:06+00:00 CRITICAL Uncaught Error: Call to undefined function dump_post() in C:\xampp\htdocs\wonder\wp-content\themes\flatsome\functions.php:56
+Stack trace:
+#0 C:\xampp\htdocs\wonder\wp-includes\shortcodes.php(319): home_project_view_func('', '', 'home_project_vi...')
+#1 [internal function]: do_shortcode_tag(Array)
+#2 C:\xampp\htdocs\wonder\wp-includes\shortcodes.php(197): preg_replace_callback('/\\[(\\[?)(home_p...', 'do_shortcode_ta...', '[home_project_v...')
+#3 C:\xampp\htdocs\wonder\wp-content\themes\flatsome\inc\helpers\helpers-shortcode.php(187): do_shortcode('[home_project_v...')
+#4 C:\xampp\htdocs\wonder\wp-includes\class-wp-hook.php(286): flatsome_contentfix('[home_project_v...')
+#5 C:\xampp\htdocs\wonder\wp-includes\plugin.php(203): WP_Hook->apply_filters('[home_project_v...', Array)
+#6 C:\xampp\htdocs\wonder\wp-includes\post-template.php(240): apply_filters('the_content', '[home_project_v...')
+#7 C:\xampp\htdocs\wonder\wp-content\themes\flatsome\page-home.php(12): the_content()
+#8 C:\xampp\htdocs\wonder\wp-includes\t in C:\xampp\htdocs\wonder\wp-content\themes\flatsome\functions.php on line 56
+
+2018-12-15T16:30:08+00:00 CRITICAL syntax error, unexpected '}' in C:\xampp\htdocs\wonder\wp-content\themes\flatsome\template-parts\portfolio\archive-portfolio.php on line 11
+
