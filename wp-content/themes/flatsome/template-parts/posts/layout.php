@@ -10,7 +10,7 @@
 	<?php
 		if(is_single()){
 			get_template_part( 'template-parts/posts/single');
-			comments_template();
+			//comments_template();
 		} else{
 			get_template_part( 'template-parts/posts/archive', flatsome_option('blog_style') );
 		}

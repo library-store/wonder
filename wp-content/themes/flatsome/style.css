@@ -107,6 +107,13 @@ h3.widget-title, span.widget-title {
     width: 100% !important;
 }
 
+.portfolio-summary{
+    display: none;
+}
+
+.page-id-277 .portfolio-element-wrapper {
+    padding-top: 100px;
+}
 /*********************** WOOCOMMERCE *********************/
 .quick-view.quick-view-added {
     display: none;
