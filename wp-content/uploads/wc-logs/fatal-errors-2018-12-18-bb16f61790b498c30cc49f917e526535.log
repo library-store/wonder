@@ -1,0 +1,24 @@
+2018-12-18T02:45:33+00:00 CRITICAL Uncaught Error: Call to a member function count() on array in C:\xampp\htdocs\wonder\wp-content\themes\flatsome\inc\post-types\post-type-ux-portfolio.php:359
+Stack trace:
+#0 C:\xampp\htdocs\wonder\wp-includes\class-wp-hook.php(288): Featured_Item_Post_Type->add_taxonomy_filters('featured_item')
+#1 C:\xampp\htdocs\wonder\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#2 C:\xampp\htdocs\wonder\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\wonder\wp-admin\includes\class-wp-posts-list-table.php(478): do_action('restrict_manage...', 'featured_item', 'top')
+#4 C:\xampp\htdocs\wonder\wp-admin\includes\class-wp-list-table.php(1140): WP_Posts_List_Table->extra_tablenav('top')
+#5 C:\xampp\htdocs\wonder\wp-admin\includes\class-wp-list-table.php(1082): WP_List_Table->display_tablenav('top')
+#6 C:\xampp\htdocs\wonder\wp-admin\edit.php(362): WP_List_Table->display()
+#7 {main}
+  thrown in C:\xampp\htdocs\wonder\wp-content\themes\flatsome\inc\post-types\post-type-ux-portfolio.php on line 359
+
+2018-12-18T02:47:38+00:00 CRITICAL Uncaught Error: Call to a member function count() on array in C:\xampp\htdocs\wonder\wp-content\themes\flatsome\inc\post-types\post-type-ux-portfolio.php:359
+Stack trace:
+#0 C:\xampp\htdocs\wonder\wp-includes\class-wp-hook.php(288): Featured_Item_Post_Type->add_taxonomy_filters('featured_item')
+#1 C:\xampp\htdocs\wonder\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#2 C:\xampp\htdocs\wonder\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\wonder\wp-admin\includes\class-wp-posts-list-table.php(478): do_action('restrict_manage...', 'featured_item', 'top')
+#4 C:\xampp\htdocs\wonder\wp-admin\includes\class-wp-list-table.php(1140): WP_Posts_List_Table->extra_tablenav('top')
+#5 C:\xampp\htdocs\wonder\wp-admin\includes\class-wp-list-table.php(1082): WP_List_Table->display_tablenav('top')
+#6 C:\xampp\htdocs\wonder\wp-admin\edit.php(362): WP_List_Table->display()
+#7 {main}
+  thrown in C:\xampp\htdocs\wonder\wp-content\themes\flatsome\inc\post-types\post-type-ux-portfolio.php on line 359
+

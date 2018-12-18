@@ -84,7 +84,7 @@ function home_project_view_func($atts)
                     <div class="portfolio-box box has-hover box-shade dark">
                         <div class="box-image">
                             <div class="image-cover" style="padding-top:100%;">
-                                '.get_the_post_thumbnail( $project->ID, 'thumbnail', array( 'class' => '' ) ).'
+                                '.get_the_post_thumbnail( $project->ID, '', array( 'class' => '' ) ).'
                                 <div class="shade"></div>
                             </div>
                         </div><!-- box-image -->

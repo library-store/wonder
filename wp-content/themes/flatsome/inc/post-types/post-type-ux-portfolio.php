@@ -356,6 +356,7 @@ if (!class_exists('Featured_Item_Post_Type')) :
                 $tax_obj = get_taxonomy($tax_slug);
                 $tax_name = $tax_obj->labels->name;
                 $terms = get_terms($tax_slug);
+
                 if (0 == count($terms)) {
                     return;
                 }
