@@ -127,3 +127,9 @@ h3.widget-title, span.widget-title {
 .page-id-277 .featured-title{
     display: none;
 }
+
+@media screen and (max-width: 549px){
+    .home #main {
+        margin-top: 0px;
+    }
+}
